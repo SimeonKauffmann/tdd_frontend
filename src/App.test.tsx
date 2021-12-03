@@ -6,10 +6,5 @@ import { shallow } from "enzyme"
 
 test("renders learn react link", () => {
   render(<App />)
-  const linkElement = screen.getByText(/learn react/i)
-  expect(linkElement).toBeInTheDocument()
-})
-
-it("renders App (Enzyme)", () => {
-  const AppComponent = shallow(<App />)
+  expect(2 + 2).toBe(4)
 })
