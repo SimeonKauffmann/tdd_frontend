@@ -1,24 +1,20 @@
-import React from "react"
 import "./App.css"
 
+import ListView from "./views/ListView"
+import React from "react"
+
+// import axios from "axios"
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
+  // const [products, setProducts] = React.useState()
+
+  // React.useEffect(() => {
+  //   axios.get("localhost:3001/api").then((res) => {
+  //     setProducts(res.data)
+  //   })
+  // }, [])
+
+  return <div className="App">{/* <ListView /> */}</div>
 }
 
 export default App
