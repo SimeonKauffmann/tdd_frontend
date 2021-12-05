@@ -1,6 +1,7 @@
 import "./App.css"
 
 import ListView from "./views/ListView"
+import ProductView from "./views/ProductView"
 import React from "react"
 
 // import axios from "axios"
@@ -14,7 +15,7 @@ function App() {
   //   })
   // }, [])
 
-  return <div className="App">{/* <ListView /> */}</div>
+  return <div className="App">{<ProductView />}</div>
 }
 
 export default App
