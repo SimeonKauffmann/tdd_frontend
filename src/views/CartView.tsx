@@ -1,5 +1,13 @@
-import React from "react"
+import React, { ReactElement } from 'react'
 
-export default function CartView() {
-  return <div></div>
+interface Props {
+    
+}
+
+export default function CartView({}: Props): ReactElement {
+    return (
+        <div>
+            Cart
+        </div>
+    )
 }
