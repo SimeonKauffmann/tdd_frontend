@@ -1,11 +1,9 @@
 import "./App.css"
-
-import ListView from "./views/ListView"
+import Routing from './routing';
+// import ListView from "./views/ListView"
 import React from "react"
 
 // import axios from "axios"
-
-function App() {
   // const [products, setProducts] = React.useState()
 
   // React.useEffect(() => {
@@ -14,7 +12,6 @@ function App() {
   //   })
   // }, [])
 
-  return <div className="App">{/* <ListView /> */}</div>
-}
+const App = () => <Routing />;
 
-export default App
+export default App;
