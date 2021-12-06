@@ -16,7 +16,7 @@ function App() {
   //   })
   // }, [])
 
-  return <div className="App">{<CartView />}</div>
+  return <div className="App">{<ProductView />}</div>
 }
 
 export default App
