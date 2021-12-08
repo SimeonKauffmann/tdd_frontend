@@ -28,12 +28,14 @@ export default function ListView() {
 
   return (
     <div>
+         <p>List</p>
       {products &&
         products.map((product) => (
           <div className={"productCard"} key={product}>
             a product
           </div>
         ))}
+       
     </div>
   )
 }
