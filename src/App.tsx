@@ -1,17 +1,20 @@
 import React from "react"
 import "./App.css"
+
 import Routing from './routing';
 // import ListView from "./views/ListView"
 
-// import axios from "axios"
-  // const [products, setProducts] = React.useState()
+import React from "react"
 
-  // React.useEffect(() => {
-  //   axios.get("localhost:3001/api").then((res) => {
-  //     setProducts(res.data)
-  //   })
-  // }, [])
+
+import ListView from "./views/ListView"
+import ProductView from "./views/ProductView"
+import CartView from "./views/CartView"
+
+import Routing from './routing';
 
 const App = () => <Routing />;
 
-export default App;
+
+
+export default App
