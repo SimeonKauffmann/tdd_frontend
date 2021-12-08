@@ -34,5 +34,19 @@ describe("Login component", () => {
         const loginLabel = screen.getByText(/username/i)
         expect(loginLabel).toBeInTheDocument();
     })
+
+    test('Login and render welcome response',()=> {
+let component = shallow(<LoginView/>);
+component.find('input[type="text"]').simulate('change', {target: {name: 'username', value: 'Bob'}});
+component.find('input[type="password"]').simulate('change', {target: {name: 'password', value: 'qwerty'}});
+component.find("button").simulate("click", {
+  preventDefault: () => {
+  }
+ });
+const response = component.find("#response").text()
+expect(response).toEqual("Welcome Bob")
+})
+
+
 })
 

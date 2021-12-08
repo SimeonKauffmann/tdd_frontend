@@ -21,15 +21,16 @@ export default function LoginView(): ReactElement {
     }
 
     function submit(event: any){
-        verifyLogin() 
+        event.preventDefault();
+        verifyLogin();
     }
     return (
         <div>
             <form action="">
                 <label>Username</label>
-            <input type="text"onChange={event => setUserName(event.target.value)}/>
+            <input type="text" name="username" onChange={event => setUserName(event.target.value)}/>
                 <label>Password </label>
-                <input type="password" onChange={event => setPassword(event.target.value)} />
+                <input type="password" name="password" onChange={event => setPassword(event.target.value)} />
                 <button onClick={submit}>Login</button>
             </form>
             <p id="response">{res}</p>
