@@ -1,14 +1,11 @@
 import "./App.css"
-import React from "react"
 
+import CartView from "./views/CartView"
 import ListView from "./views/ListView"
 import ProductView from "./views/ProductView"
-import CartView from "./views/CartView"
+import React from "react"
+import Routing from "./Routing"
 
-import Routing from './routing';
-
-const App = () => <Routing />;
-
-
+const App = () => <Routing />
 
 export default App

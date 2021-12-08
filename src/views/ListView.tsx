@@ -1,4 +1,6 @@
+import ProductCard from "../components/ProductCard"
 import React from "react"
+import { Route } from "react-router-dom"
 import axios from "axios"
 
 // import ProductCard from '../components/ProductCard'
@@ -10,10 +12,10 @@ export type productType = {
 }
 
 export default function ListView() {
-  const [products, setProducts] = React.useState([])
+  const [products, setProducts] = React.useState<productType[]>([])
 
   React.useEffect(() => {
-    axios.get("localhost:3001/products").then((res) => {
+    axios.get("http://localhost:3001/products").then((res) => {
       setProducts(res.data)
     })
   }, [])
@@ -27,15 +29,12 @@ export default function ListView() {
   //   }, [])
 
   return (
-    <div>
-         <p>List</p>
+    <React.Fragment>
+      <p>List</p>
       {products &&
         products.map((product) => (
-          <div className={"productCard"} key={product}>
-            a product
-          </div>
+          <ProductCard id={product.id} key={product.id} />
         ))}
-       
-    </div>
+    </React.Fragment>
   )
 }
