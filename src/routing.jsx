@@ -12,7 +12,7 @@ const Routing = () => {
       <Navbar />
       <Switch>
         <Route exact path='/cart' component={Cart} />
-        <Route exact path='/list' component={List} />
+        <Route exact path='/' component={List} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/product/:id' component={Product} />
       </Switch>
