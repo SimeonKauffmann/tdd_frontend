@@ -1,7 +1,7 @@
 import "./App.css"
 
 import React from "react"
-import Routing from "./routing"
+import Routing from "./Routing"
 
 // import ListView from "./views/ListView"
 
