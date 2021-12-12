@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from "@testing-library/react"
+import { render, screen, fireEvent} from "@testing-library/react"
+import { act } from 'react-dom/test-utils';
 import LoginView from '../views/LoginView'
-import React from "react"
-import { shallow, mount } from "enzyme"
+import { shallow, mount, ReactWrapper } from "enzyme"
 
 describe("Login component", () => {
     it("Render without error", ()=> {
@@ -11,11 +11,11 @@ describe("Login component", () => {
         mount(<LoginView/>)
     })
 
-    it("Renders response element correct initially", () => {
+    it("Renders response element correct initially", async() => {
         const component = shallow(<LoginView/>)
         const expectedText = ""
         const actualText = component.find("#response").text()
-        expect(actualText).toBe(expectedText)
+        expect(await actualText).toBe(expectedText)
     })
 
     it("Check if Login button is present", () => {
@@ -35,18 +35,16 @@ describe("Login component", () => {
         expect(loginLabel).toBeInTheDocument();
     })
 
-    test('Login and render welcome response',()=> {
-let component = shallow(<LoginView/>);
-component.find('input[type="text"]').simulate('change', {target: {name: 'username', value: 'Bob'}});
-component.find('input[type="password"]').simulate('change', {target: {name: 'password', value: 'qwerty'}});
+    test('Login and render welcome response', ()=> {
+        const component = shallow(<LoginView/>);
+component.find('input[type="text"]').simulate('change', {target: {name: 'username', value: 'Samuel'}});
+component.find('input[type="password"]').simulate('change', {target: {name: 'password', value: 'password'}});
 component.find("button").simulate("click", {
   preventDefault: () => {
   }
- });
-const response = component.find("#response").text()
-expect(response).toEqual("Welcome Bob")
-})
-
-
+ })    
+ const response = component.find("#response").text()
+expect(response).toEqual("Welcome Samuel")
+    });
 })
 
