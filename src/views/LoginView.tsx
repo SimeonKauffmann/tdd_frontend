@@ -1,23 +1,26 @@
-import React, { ReactElement, useState } from "react"
+import React, { ReactElement, useState, useEffect } from "react"
+import axios from "axios";
 
 import UserContext from "../components/UserContext"
 
 export default function LoginView(): ReactElement {
-  const usersData = [
-    { userLogin: "Patrik261", name: "Patrik" },
-    { userLogin: "password", name: "Samuel" },
-    { userLogin: "tyst", name: "Simeon" },
-    { userLogin: "secret", name: "Lulin" },
-  ]
 
   const [userName, setUserName] = useState("")
   const [password, setPassword] = useState("")
+  const [usersData, setUsersData] = useState<any>([])
   const [res, setRes] = useState("")
 
+ async function getData () {
+      await axios
+      .get("http://localhost:3001/users")
+      .then((response) => setUsersData(response.data));
+}
+
+
   function verifyLogin() {
-    const correctUsername = usersData.filter((data) => data.name === userName)
+    const correctUsername = usersData.filter((data: any) => data.name === userName)
     const correctPassword = correctUsername.filter(
-      (data) => data.userLogin === password
+      (data: any) => data.userLogin === password
     )
     if (correctPassword[0]) {
       setRes(`Welcome ${correctPassword[0].name}`)
@@ -28,6 +31,7 @@ export default function LoginView(): ReactElement {
 
   function submit(event: any) {
     event.preventDefault()
+    getData();
     verifyLogin()
   }
   return (
