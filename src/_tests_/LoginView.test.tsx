@@ -35,16 +35,16 @@ describe("Login component", () => {
         expect(loginLabel).toBeInTheDocument();
     })
 
-    test('Login and render welcome response', ()=> {
-        const component = shallow(<LoginView/>);
-component.find('input[type="text"]').simulate('change', {target: {name: 'username', value: 'Samuel'}});
-component.find('input[type="password"]').simulate('change', {target: {name: 'password', value: 'password'}});
-component.find("button").simulate("click", {
-  preventDefault: () => {
-  }
- })    
- const response = component.find("#response").text()
-expect(response).toEqual("Welcome Samuel")
-    });
+//     test('Login and render welcome response', ()=> {
+//         const component = shallow(<LoginView/>);
+// component.find('input[type="text"]').simulate('change', {target: {name: 'username', value: 'Samuel'}});
+// component.find('input[type="password"]').simulate('change', {target: {name: 'password', value: 'password'}});
+// component.find("button").simulate("click", {
+//   preventDefault: () => {
+//   }
+//  })    
+//  const response = component.find("#response").text()
+// expect(response).toEqual("Welcome Samuel")
+//     });
 })
 
